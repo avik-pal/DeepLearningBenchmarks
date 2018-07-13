@@ -1,4 +1,6 @@
-function run_benchmarks(arr)
+using BenchmarkTools
+
+function run_benchmarks(arr, batch_size)
     for m in arr
         println("*"^10,m,"*"^10)
         model = m() |> gpu
@@ -22,11 +24,10 @@ function run_benchmarks(arr)
 
     for m in arr
         println("*"^10,m,"*"^10)
-        model = m()
+        model = m() |> gpu
         Flux.testmode!(model)
         input_arr = rand(224, 224, 3, batch_size) |> gpu
-        grad_arr = ones(1000, batch_size) |> gpu
-
+        
         println("Inference Time")
         @btime begin
             result = $model($input_arr)

@@ -1,7 +1,7 @@
 include("vggmodels.jl")
-include("benchmarking_cpu.jl")
+include("benchmarking_gpu.jl")
 
-using Flux
+using Flux, CuArrays
 
 batch_size = 8
 

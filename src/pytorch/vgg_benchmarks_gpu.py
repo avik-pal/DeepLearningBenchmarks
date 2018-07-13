@@ -1,7 +1,8 @@
+import torch
 from torchvision.models import vgg16, vgg16_bn, vgg19, vgg19_bn
-from benchmarking_cpu import run_benchmarks
+from benchmarking_gpu import run_benchmarks
 
-n_iters = 51
+n_iters = 101
 batch_size = 8
 
 print("The models are being run on input size of {}".format((batch_size, 3, 224, 224)))

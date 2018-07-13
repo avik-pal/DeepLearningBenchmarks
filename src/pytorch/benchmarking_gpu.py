@@ -1,6 +1,6 @@
-def run_benchmarks(arr):
-    global n_iters
-    global batch_size
+import torch, time
+
+def run_benchmarks(arr, batch_size, n_iters):
 
     for m in arr:
         print("*"*10, "Model {}".format(m), "*"*10)

@@ -1,4 +1,8 @@
-## Input Dimensions : Batch Size = 8, Image = 3 x 224 x 224
+## Input Dimensions
+1. Batch Size = 8, Image = 3 x 224 x 224 (IF NOTHING SPECIFIED)
+2. Batch Size = 4, Image = 3 x 224 x 224
+  * Resnet 101
+  * Resnet 152
 
 ## GPU USED --- Tesla V100 16 GB
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -11,6 +15,16 @@
 ||Flux|0.0565 s|0.6611 s|0.7176 s||
 |VGG19 BN|Pytorch 0.4|0.0344 s|0.0701 s|0.1046 s|0.0329 s|
 ||Flux|0.0585 s|0.6659 s|0.7284 s||
+|Resnet18|Pytorch 0.4|0.0066 s|0.0213 s|0.0279 s|0.0051 s|
+||Flux|||||
+|Resnet34|Pytorch 0.4|0.0131 s|0.0537 s|0.0668 s|0.0202 s|
+||Flux|||||
+|Resnet50|Pytorch 0.4|0.0235 s|0.0713 s|0.0949 s|0.0262 s|
+||Flux|||||
+|Resnet101|Pytorch 0.4|||||
+||Flux|||||
+|Resnet152|Pytorch 0.4|||||
+||Flux|||||
 
 ## GPU USED --- Tesla P100 16 GB
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -23,6 +37,16 @@
 ||Flux|0.1012 s|0.8060 s|0.9072 s||
 |VGG19 BN|Pytorch 0.4|0.0329 s|0.0902 s|0.1231 s|0.0329 s|
 ||Flux|0.1051 s|0.8116 s|0.9167 s||
+|Resnet18|Pytorch 0.4|0.0077 s|0.0165 s|0.0242 s|0.0064 s|
+||Flux|0.0280 s|0.1772 s|||
+|Resnet34|Pytorch 0.4|0.0115 s|0.0292 s|0.0407 s|0.0113 s|
+||Flux|0.0989 s|0.3926 s|||
+|Resnet50|Pytorch 0.4|0.0200 s|0.0429 s|0.0630 s|0.0195 s|
+||Flux|0.0989 s|0.3926 s|||
+|Resnet101|Pytorch 0.4|||||
+||Flux|0.0888 s|0.2557 s|||
+|Resnet152|Pytorch 0.4|||||
+||Flux|0.5442 s|0.4523 s|||
 
 ## GPU USED --- Titan 1080Ti 12 GB
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -35,6 +59,16 @@
 ||Flux|0.0925 s|0.5375 s|0.6300 s||
 |VGG19 BN|Pytorch 0.4|0.0321 s|0.0812 s|0.1134 s|0.0325 s|
 ||Flux|0.0975 s|0.5903 s|0.6878 s||
+|Resnet18|Pytorch 0.4|||||
+||Flux|||||
+|Resnet34|Pytorch 0.4|||||
+||Flux|||||
+|Resnet50|Pytorch 0.4|||||
+||Flux|||||
+|Resnet101|Pytorch 0.4|||||
+||Flux|||||
+|Resnet152|Pytorch 0.4|||||
+||Flux|||||
 
 ## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -47,3 +81,13 @@
 ||Flux|12.226 s|12.457 s|24.683 s|12.029 s|
 |VGG19 BN|Pytorch 0.4|8.7794 s|12.739 s|21.519 s|8.4044 s|
 ||Flux|28.518 s|21.464 s|49.982 s|22.649 s|
+|Resnet18|Pytorch 0.4|||||
+||Flux|||||
+|Resnet34|Pytorch 0.4|||||
+||Flux|||||
+|Resnet50|Pytorch 0.4|||||
+||Flux|||||
+|Resnet101|Pytorch 0.4|||||
+||Flux|||||
+|Resnet152|Pytorch 0.4|||||
+||Flux|||||

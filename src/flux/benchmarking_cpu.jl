@@ -1,4 +1,6 @@
-function run_benchmarks(arr)
+using BenchmarkTools
+
+function run_benchmarks(arr, batch_size)
     for m in arr
         println("*"^10,m,"*"^10)
         model = m()
@@ -19,7 +21,6 @@ function run_benchmarks(arr)
         model = m()
         Flux.testmode!(model)
         input_arr = rand(224, 224, 3, batch_size)
-        grad_arr = ones(1000, batch_size)
 
         println("Inference Time :")
         @btime result = $model($input_arr)
