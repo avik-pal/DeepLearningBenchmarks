@@ -36,14 +36,14 @@
 |VGG19 BN|Pytorch 0.4|0.0321 s|0.0812 s|0.1134 s|0.0325 s|
 ||Flux|0.0975 s|0.5903 s|0.6878 s||
 
-## CPU USED ---
+## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|VGG16|Pytorch 0.4|||||
-||Flux|||||
-|VGG16 BN|Pytorch 0.4|||||
-||Flux|||||
-|VGG19|Pytorch 0.4|||||
-||Flux|||||
-|VGG19 BN|Pytorch 0.4|||||
-||Flux|||||
+|VGG16|Pytorch 0.4|6.6024 s|9.4336 s|16.036 s|6.4216 s|
+||Flux|10.458 s|10.245 s|20.703 s|10.111 s|
+|VGG16 BN|Pytorch 0.4|7.0793 s|9.0536 s|16.132 s|6.7909 s|
+||Flux|29.633 s|18.649 s|49.282 s|24.047 s|
+|VGG19|Pytorch 0.4|8.3075 s|10.899 s|19.2065 s|8.0593 s|
+||Flux|12.226 s|12.457 s|24.683 s|12.029 s|
+|VGG19 BN|Pytorch 0.4|8.7794 s|12.739 s|21.519 s|8.4044 s|
+||Flux|28.518 s|21.464 s|49.982 s|22.649 s|
