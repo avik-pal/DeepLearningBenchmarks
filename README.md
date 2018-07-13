@@ -1,8 +1,8 @@
 ## Input Dimensions
-1. Batch Size = 8, Image = 3 x 224 x 224 (IF NOTHING SPECIFIED)
+1. Batch Size = 8, Image = 3 x 224 x 224 (IF NOTHING SPECIFIED / CPU USED)
 2. Batch Size = 4, Image = 3 x 224 x 224
-  * Resnet 101
-  * Resnet 152
+    * Resnet 101
+    * Resnet 152
 
 ## GPU USED --- Tesla V100 16 GB
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -38,13 +38,13 @@
 |VGG19 BN|Pytorch 0.4|0.0329 s|0.0902 s|0.1231 s|0.0329 s|
 ||Flux|0.1051 s|0.8116 s|0.9167 s||
 |Resnet18|Pytorch 0.4|0.0077 s|0.0165 s|0.0242 s|0.0064 s|
-||Flux|0.0280 s|0.1772 s|||
+||Flux|0.0280 s|0.1772 s|0.2052 s|0.0277|
 |Resnet34|Pytorch 0.4|0.0115 s|0.0292 s|0.0407 s|0.0113 s|
-||Flux|0.0989 s|0.3926 s|||
+||Flux|0.0468 s|0.2435 s|0.2903 s|0.0435 s|
 |Resnet50|Pytorch 0.4|0.0200 s|0.0429 s|0.0630 s|0.0195 s|
 ||Flux|0.0989 s|0.3926 s|||
 |Resnet101|Pytorch 0.4|||||
-||Flux|0.0888 s|0.2557 s|||
+||Flux|0.0888 s|0.2557 s|0.3445 s||
 |Resnet152|Pytorch 0.4|||||
 ||Flux|0.5442 s|0.4523 s|||
 
