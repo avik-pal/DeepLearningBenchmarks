@@ -42,7 +42,7 @@
 |Resnet34|Pytorch 0.4|0.0115 s|0.0292 s|0.0407 s|0.0113 s|
 ||Flux|0.0468 s|0.2435 s|0.2903 s|0.0435 s|
 |Resnet50|Pytorch 0.4|0.0200 s|0.0429 s|0.0630 s|0.0195 s|
-||Flux|0.0989 s|0.3926 s|0.4915 s|0.097551|
+||Flux|0.0989 s|0.3926 s|0.4915 s|0.09755 s|
 |Resnet101|Pytorch 0.4|0.0292 s|0.0464 s|0.0756 s|0.0300 s|
 ||Flux|0.0888 s|0.2557 s|0.3445 s|0.0871 s|
 |Resnet152|Pytorch 0.4|0.0422 s|0.0667 s|0.1089 s|0.04181 s|
@@ -60,7 +60,7 @@
 |VGG19 BN|Pytorch 0.4|0.0321 s|0.0812 s|0.1134 s|0.0325 s|
 ||Flux|0.0975 s|0.5903 s|0.6878 s||
 |Resnet18|Pytorch 0.4|0.0064 s|0.0125 s|0.0190 s|0.0050 s|
-||Flux|0.0221 s|0.1306 s|0.1527 s|0.0219|
+||Flux|0.0221 s|0.1306 s|0.1527 s|0.0219 s|
 |Resnet34|Pytorch 0.4|0.0092 s|0.0216 s|0.0307 s|0.0092 s|
 ||Flux|0.0361 s|0.3000 s|0.3361 s|0.0357 s|
 |Resnet50|Pytorch 0.4|0.0155 s|0.0351 s|0.0506 s|0.0152 s|
@@ -90,3 +90,95 @@
 ||Flux|||||
 |Resnet152|Pytorch 0.4|||||
 ||Flux|||||
+
+## Algorithm Benchmarks
+
+### Layer Descriptions
+1. Conv3x3/1 = Conv2d, 3x3 Kernel, 1x1 Padding, 1x1 Stride
+2. Conv5x5/1 = Conv2d, 5x5 Kernel, 2x2 Padding, 1x1 Stride
+3. Conv3x3/2 = Conv2d, 3x3 Kernel, 1x1 Padding, 2x2 Stride
+4. Conv5x5/2 = Conv2d, 5x5 Kernel, 2x2 Padding, 2x2 Stride
+5. Dense = 1024 => 512
+6. BatchNorm = BatchNorm2d
+7. Maxpool = Maxpool2d, 3x3 Kernel, 1x1 Padding, 2x2 Stride
+8. Meanpool = Meanpool2d, 3x3 Kernel, 1x1 Padding, 2x2 Stride
+
+## GPU USED --- Tesla V100 16 GB
+|Layer|Framework|Forward Pass|Backward Pass|Total Time|
+|:---:|:---:|:---:|:---:|:---:|
+|Conv3x3/1|Pytorch 0.4||||
+||Flux||||
+|Conv5x5/1|Pytorch 0.4||||
+||Flux||||
+|Conv3x3/2|Pytorch 0.4||||
+||Flux||||
+|Conv5x5/2|Pytorch 0.4||||
+||Flux||||
+|Dense|Pytorch 0.4||||
+||Flux||||
+|BatchNorm|Pytorch 0.4||||
+||Flux||||
+|Maxpool|Pytorch 0.4||||
+||Flux||||
+|Meanpool|Pytorch 0.4||||
+||Flux||||
+
+## GPU USED --- Tesla P100 16 GB
+|Layer|Framework|Forward Pass|Backward Pass|Total Time|
+|:---:|:---:|:---:|:---:|:---:|
+|Conv3x3/1|Pytorch 0.4||||
+||Flux||||
+|Conv5x5/1|Pytorch 0.4||||
+||Flux||||
+|Conv3x3/2|Pytorch 0.4||||
+||Flux||||
+|Conv5x5/2|Pytorch 0.4||||
+||Flux||||
+|Dense|Pytorch 0.4||||
+||Flux||||
+|BatchNorm|Pytorch 0.4||||
+||Flux||||
+|Maxpool|Pytorch 0.4||||
+||Flux||||
+|Meanpool|Pytorch 0.4||||
+||Flux||||
+
+## GPU USED --- Titan 1080Ti 12 GB
+|Layer|Framework|Forward Pass|Backward Pass|Total Time|
+|:---:|:---:|:---:|:---:|:---:|
+|Conv3x3/1|Pytorch 0.4|1.2822 ms|0.5715 ms|1.8538 ms|
+||Flux|1.0112 ms|17.980 ms|18.992 ms|
+|Conv5x5/1|Pytorch 0.4|0.2631 ms|0.5439 ms|0.8071 ms|
+||Flux|1.0231 ms|18.049 ms|19.170 ms|
+|Conv3x3/2|Pytorch 0.4|0.1289 ms|0.2474 ms|0.3764 ms|
+||Flux|0.3097 ms|4.0903 ms|4.4000 ms|
+|Conv5x5/2|Pytorch 0.4|0.1263 ms|0.2537 ms|0.3800 ms|
+||Flux|0.3181 ms|4.1010 ms|4.4191 ms|
+|Dense|Pytorch 0.4|0.0887 ms|0.1523 ms|0.2411 ms|
+||Flux|0.1179 ms|0.0875 ms|0.2054 ms|
+|BatchNorm|Pytorch 0.4|0.1096 ms|0.1999 ms|0.3095 ms|
+||Flux|0.2485 ms|0.2293 ms|0.4778 ms|
+|Maxpool|Pytorch 0.4||||
+||Flux||||
+|Meanpool|Pytorch 0.4||||
+||Flux||||
+
+## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
+|Layer|Framework|Forward Pass|Backward Pass|Total Time|
+|:---:|:---:|:---:|:---:|:---:|
+|Conv3x3/1|Pytorch 0.4||||
+||Flux||||
+|Conv5x5/1|Pytorch 0.4||||
+||Flux||||
+|Conv3x3/2|Pytorch 0.4||||
+||Flux||||
+|Conv5x5/2|Pytorch 0.4||||
+||Flux||||
+|Dense|Pytorch 0.4||||
+||Flux||||
+|BatchNorm|Pytorch 0.4||||
+||Flux||||
+|Maxpool|Pytorch 0.4||||
+||Flux||||
+|Meanpool|Pytorch 0.4||||
+||Flux||||
