@@ -38,15 +38,15 @@
 |VGG19 BN|Pytorch 0.4|0.0329 s|0.0902 s|0.1231 s|0.0329 s|
 ||Flux|0.1051 s|0.8116 s|0.9167 s||
 |Resnet18|Pytorch 0.4|0.0077 s|0.0165 s|0.0242 s|0.0064 s|
-||Flux|0.0280 s|0.1772 s|0.2052 s|0.0277|
+||Flux|0.0280 s|0.1772 s|0.2052 s|0.0277 s|
 |Resnet34|Pytorch 0.4|0.0115 s|0.0292 s|0.0407 s|0.0113 s|
 ||Flux|0.0468 s|0.2435 s|0.2903 s|0.0435 s|
 |Resnet50|Pytorch 0.4|0.0200 s|0.0429 s|0.0630 s|0.0195 s|
-||Flux|0.0989 s|0.3926 s|||
-|Resnet101|Pytorch 0.4|||||
-||Flux|0.0888 s|0.2557 s|0.3445 s||
-|Resnet152|Pytorch 0.4|||||
-||Flux|0.5442 s|0.4523 s|||
+||Flux|0.0989 s|0.3926 s|0.4915 s|0.097551|
+|Resnet101|Pytorch 0.4|0.0292 s|0.0464 s|0.0756 s|0.0300 s|
+||Flux|0.0888 s|0.2557 s|0.3445 s|0.0871 s|
+|Resnet152|Pytorch 0.4|0.0422 s|0.0667 s|0.1089 s|0.04181 s|
+||Flux|0.1274 s|0.6478 s|0.7752 s|0.1249 s|
 
 ## GPU USED --- Titan 1080Ti 12 GB
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -59,16 +59,15 @@
 ||Flux|0.0925 s|0.5375 s|0.6300 s||
 |VGG19 BN|Pytorch 0.4|0.0321 s|0.0812 s|0.1134 s|0.0325 s|
 ||Flux|0.0975 s|0.5903 s|0.6878 s||
-|Resnet18|Pytorch 0.4|||||
-||Flux|||||
-|Resnet34|Pytorch 0.4|||||
-||Flux|||||
-|Resnet50|Pytorch 0.4|||||
-||Flux|||||
-|Resnet101|Pytorch 0.4|||||
-||Flux|||||
-|Resnet152|Pytorch 0.4|||||
-||Flux|||||
+|Resnet18|Pytorch 0.4|0.0064 s|0.0125 s|0.0190 s|0.0050 s|
+||Flux|0.0221 s|0.1306 s|0.1527 s|0.0219|
+|Resnet34|Pytorch 0.4|0.0092 s|0.0216 s|0.0307 s|0.0092 s|
+||Flux|0.0361 s|0.3000 s|0.3361 s|0.0357 s|
+|Resnet50|Pytorch 0.4|0.0155 s|0.0351 s|0.0506 s|0.0152 s|
+||Flux|0.4778 s|1.7582 s|2.206 s|0.6238 s|
+|Resnet101|Pytorch 0.4|0.0297 s|0.0379 s|0.0676 s|0.0298 s|
+||Flux|0.0720 s|0.6926 s|0.7646 s|0.0708 s|
+|Resnet152|Pytorch 0.4|0.0431 s|0.05337 s|0.0965 s|0.0429 s|
 
 ## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|

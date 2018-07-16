@@ -13,11 +13,9 @@ function run_benchmarks(arr, batch_size)
             CUDAnative.synchronize()
         end
 
-        result = model(input_arr)
-
-        println("Backward Pass Time :")
+        println("Total Time :")
         @btime begin
-            Flux.back!($result, $grad_arr)
+            Flux.back!($model($input_arr), $grad_arr)
             CUDAnative.synchronize()
         end
     end
@@ -27,7 +25,7 @@ function run_benchmarks(arr, batch_size)
         model = m() |> gpu
         Flux.testmode!(model)
         input_arr = rand(224, 224, 3, batch_size) |> gpu
-        
+
         println("Inference Time")
         @btime begin
             result = $model($input_arr)
