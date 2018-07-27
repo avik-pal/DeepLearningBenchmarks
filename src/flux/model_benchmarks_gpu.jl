@@ -1,6 +1,7 @@
 include("vggmodels.jl")
 include("resnetmodels.jl")
 include("benchmarking_gpu.jl")
+include("conv_experimental_gpu.jl")
 
 using Flux, CuArrays
 

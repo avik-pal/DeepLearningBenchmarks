@@ -24,9 +24,9 @@ def run_benchmarks(input_tensor, grad_tensor, layer):
         backward_pass_time.append(end_time_backward - start_time_backward)
         total_time.append(forward_pass_time[-1] + backward_pass_time[-1])
 
-    print("Forward Pass Time : {}".format(sum(forward_pass_time)/(n_iters-1)))
-    print("Backward Pass Time : {}".format(sum(backward_pass_time)/(n_iters-1)))
-    print("Total Time : {}".format(sum(total_time)/(n_iters-1)))
+    print("Forward Pass Time : {}".format(min(forward_pass_time)))
+    print("Backward Pass Time : {}".format(min(backward_pass_time)))
+    print("Total Time : {}".format(min(total_time)))
 
 input_tensor = torch.rand(1, 3, 224, 224)
 grad_tensor = torch.ones(1, 64, 224, 224)

@@ -1,5 +1,7 @@
 using Flux, CuArrays, BenchmarkTools
 
+include("conv_experimental_gpu.jl")
+
 function run_benchmarks()
     println("Forward Pass :")
     @btime begin

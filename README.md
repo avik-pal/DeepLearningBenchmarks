@@ -146,14 +146,14 @@
 ## GPU USED --- Titan 1080Ti 12 GB
 |Layer|Framework|Forward Pass|Backward Pass|Total Time|
 |:---:|:---:|:---:|:---:|:---:|
-|Conv3x3/1|Pytorch 0.4|1.2822 ms|0.5715 ms|1.8538 ms|
-||Flux|1.0112 ms|17.980 ms|18.992 ms|
-|Conv5x5/1|Pytorch 0.4|0.2631 ms|0.5439 ms|0.8071 ms|
-||Flux|1.0231 ms|18.049 ms|19.170 ms|
-|Conv3x3/2|Pytorch 0.4|0.1289 ms|0.2474 ms|0.3764 ms|
-||Flux|0.3097 ms|4.0903 ms|4.4000 ms|
-|Conv5x5/2|Pytorch 0.4|0.1263 ms|0.2537 ms|0.3800 ms|
-||Flux|0.3181 ms|4.1010 ms|4.4191 ms|
+|Conv3x3/1|Pytorch 0.4|0.2312 ms|0.5359 ms|0.7736 ms|
+||Flux|0.2416 ms|0.3157 ms|0.5573 ms|
+|Conv5x5/1|Pytorch 0.4|0.2667 ms|0.5345 ms|0.8299 ms|
+||Flux|0.2543 ms|0.3660 ms|0.6203 ms|
+|Conv3x3/2|Pytorch 0.4|0.1170 ms|0.2203 ms|0.3376 ms|
+||Flux|0.1166 ms|0.1601 ms|0.2767 ms|
+|Conv5x5/2|Pytorch 0.4|0.1233 ms|0.2162 ms|0.3407 ms|
+||Flux|0.1287 ms|0.1423 ms|0.2710 ms|
 |Dense|Pytorch 0.4|0.0887 ms|0.1523 ms|0.2411 ms|
 ||Flux|0.1179 ms|0.0875 ms|0.2054 ms|
 |BatchNorm|Pytorch 0.4|0.1096 ms|0.1999 ms|0.3095 ms|
