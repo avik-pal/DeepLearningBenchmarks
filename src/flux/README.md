@@ -4,4 +4,4 @@
 2. CuArrays.jl
 3. BenchmarkTools.jl
 
-NOTE: For the benchmarks of `BatchNorm` models like `vgg16_bn` and `vgg19_bn` use the `avik-pal/cudnn_batchnorm` fork of Flux.jl till it is merged into the Flux master.
+__NOTE__: In order to reproduce these benchmarks checkout the `avikpal/convbias` branch of the fork of `CuArrays.jl` and `avikpal/cudnn_support` branch of the fork of `Flux.jl`.

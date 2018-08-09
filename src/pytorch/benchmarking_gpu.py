@@ -30,9 +30,9 @@ def run_benchmarks(arr, batch_size, n_iters):
             backward_pass_time.append(end_time_backward - start_time_backward)
             total_time.append(forward_pass_time[-1] + backward_pass_time[-1])
 
-        print("Forward Pass Time : {}".format(sum(forward_pass_time)/(n_iters-1)))
-        print("Backward Pass Time : {}".format(sum(backward_pass_time)/(n_iters-1)))
-        print("Total Time : {}".format(sum(total_time)/(n_iters-1)))
+        print("Forward Pass Time : {}".format(min(forward_pass_time)))
+        print("Backward Pass Time : {}".format(min(backward_pass_time)))
+        print("Total Time : {}".format(min(total_time)))
 
         model.eval()
         for i in range(n_iters):
@@ -45,4 +45,4 @@ def run_benchmarks(arr, batch_size, n_iters):
                 continue
             inference_time.append(end_time_forward - start_time_forward)
 
-        print("Inference Time : {}".format(sum(inference_time)/(n_iters-1)))
+        print("Inference Time : {}".format(min(inference_time)))

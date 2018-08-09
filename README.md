@@ -4,50 +4,6 @@
     * Resnet 101
     * Resnet 152
 
-## GPU USED --- Tesla V100 16 GB
-|Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|VGG16|Pytorch 0.4|0.0259 s|0.0554 s|0.0814 s|0.0245 s|
-||Flux|0.0479 s|0.6293 s|0.6772 s||
-|VGG16 BN|Pytorch 0.4|0.0262 s|0.0579 s|0.0842 s|0.0262 s|
-||Flux|0.0560 s|0.6376 s|0.6936 s||
-|VGG19|Pytorch 0.4|0.0329 s|0.0706 s|0.1035 s|0.0329 s|
-||Flux|0.0565 s|0.6611 s|0.7176 s||
-|VGG19 BN|Pytorch 0.4|0.0344 s|0.0701 s|0.1046 s|0.0329 s|
-||Flux|0.0585 s|0.6659 s|0.7284 s||
-|Resnet18|Pytorch 0.4|0.0066 s|0.0213 s|0.0279 s|0.0051 s|
-||Flux|||||
-|Resnet34|Pytorch 0.4|0.0131 s|0.0537 s|0.0668 s|0.0202 s|
-||Flux|||||
-|Resnet50|Pytorch 0.4|0.0235 s|0.0713 s|0.0949 s|0.0262 s|
-||Flux|||||
-|Resnet101|Pytorch 0.4|||||
-||Flux|||||
-|Resnet152|Pytorch 0.4|||||
-||Flux|||||
-
-## GPU USED --- Tesla P100 16 GB
-|Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|VGG16|Pytorch 0.4|0.0257 s|0.0699 s|0.0957 s|0.0246 s|
-||Flux|0.0876 s|0.7596 s|0.8472 s||
-|VGG16 BN|Pytorch 0.4|0.0274 s|0.0741 s|0.1015 s|0.0275 s|
-||Flux|0.1092 s|0.7771 s|0.8863 s||
-|VGG19|Pytorch 0.4|0.0299 s|0.0856 s|0.1155 s|0.0299 s|
-||Flux|0.1012 s|0.8060 s|0.9072 s||
-|VGG19 BN|Pytorch 0.4|0.0329 s|0.0902 s|0.1231 s|0.0329 s|
-||Flux|0.1051 s|0.8116 s|0.9167 s||
-|Resnet18|Pytorch 0.4|0.0077 s|0.0165 s|0.0242 s|0.0064 s|
-||Flux|0.0280 s|0.1772 s|0.2052 s|0.0277 s|
-|Resnet34|Pytorch 0.4|0.0115 s|0.0292 s|0.0407 s|0.0113 s|
-||Flux|0.0468 s|0.2435 s|0.2903 s|0.0435 s|
-|Resnet50|Pytorch 0.4|0.0200 s|0.0429 s|0.0630 s|0.0195 s|
-||Flux|0.0989 s|0.3926 s|0.4915 s|0.09755 s|
-|Resnet101|Pytorch 0.4|0.0292 s|0.0464 s|0.0756 s|0.0300 s|
-||Flux|0.0888 s|0.2557 s|0.3445 s|0.0871 s|
-|Resnet152|Pytorch 0.4|0.0422 s|0.0667 s|0.1089 s|0.04181 s|
-||Flux|0.1274 s|0.6478 s|0.7752 s|0.1249 s|
-
 ## GPU USED --- Titan 1080Ti 12 GB
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -100,68 +56,22 @@
 4. Conv5x5/2 = Conv2d, 5x5 Kernel, 2x2 Padding, 2x2 Stride
 5. Dense = 1024 => 512
 6. BatchNorm = BatchNorm2d
-7. Maxpool = Maxpool2d, 3x3 Kernel, 1x1 Padding, 2x2 Stride
-8. Meanpool = Meanpool2d, 3x3 Kernel, 1x1 Padding, 2x2 Stride
-
-## GPU USED --- Tesla V100 16 GB
-|Layer|Framework|Forward Pass|Backward Pass|Total Time|
-|:---:|:---:|:---:|:---:|:---:|
-|Conv3x3/1|Pytorch 0.4||||
-||Flux||||
-|Conv5x5/1|Pytorch 0.4||||
-||Flux||||
-|Conv3x3/2|Pytorch 0.4||||
-||Flux||||
-|Conv5x5/2|Pytorch 0.4||||
-||Flux||||
-|Dense|Pytorch 0.4||||
-||Flux||||
-|BatchNorm|Pytorch 0.4||||
-||Flux||||
-|Maxpool|Pytorch 0.4||||
-||Flux||||
-|Meanpool|Pytorch 0.4||||
-||Flux||||
-
-## GPU USED --- Tesla P100 16 GB
-|Layer|Framework|Forward Pass|Backward Pass|Total Time|
-|:---:|:---:|:---:|:---:|:---:|
-|Conv3x3/1|Pytorch 0.4||||
-||Flux||||
-|Conv5x5/1|Pytorch 0.4||||
-||Flux||||
-|Conv3x3/2|Pytorch 0.4||||
-||Flux||||
-|Conv5x5/2|Pytorch 0.4||||
-||Flux||||
-|Dense|Pytorch 0.4||||
-||Flux||||
-|BatchNorm|Pytorch 0.4||||
-||Flux||||
-|Maxpool|Pytorch 0.4||||
-||Flux||||
-|Meanpool|Pytorch 0.4||||
-||Flux||||
 
 ## GPU USED --- Titan 1080Ti 12 GB
 |Layer|Framework|Forward Pass|Backward Pass|Total Time|
 |:---:|:---:|:---:|:---:|:---:|
-|Conv3x3/1|Pytorch 0.4|1.2822 ms|0.5715 ms|1.8538 ms|
+|Conv3x3/1|Pytorch 0.4|0.2312 ms|0.5359 ms|0.7736 ms|
 ||Flux|1.0112 ms|17.980 ms|18.992 ms|
-|Conv5x5/1|Pytorch 0.4|0.2631 ms|0.5439 ms|0.8071 ms|
+|Conv5x5/1|Pytorch 0.4|0.2667 ms|0.5345 ms|0.8299 ms|
 ||Flux|1.0231 ms|18.049 ms|19.170 ms|
-|Conv3x3/2|Pytorch 0.4|0.1289 ms|0.2474 ms|0.3764 ms|
+|Conv3x3/2|Pytorch 0.4|0.1170 ms|0.2203 ms|0.3376 ms|
 ||Flux|0.3097 ms|4.0903 ms|4.4000 ms|
-|Conv5x5/2|Pytorch 0.4|0.1263 ms|0.2537 ms|0.3800 ms|
+|Conv5x5/2|Pytorch 0.4|0.1233 ms|0.2162 ms|0.3407 ms|
 ||Flux|0.3181 ms|4.1010 ms|4.4191 ms|
 |Dense|Pytorch 0.4|0.0887 ms|0.1523 ms|0.2411 ms|
 ||Flux|0.1179 ms|0.0875 ms|0.2054 ms|
 |BatchNorm|Pytorch 0.4|0.1096 ms|0.1999 ms|0.3095 ms|
 ||Flux|0.2485 ms|0.2293 ms|0.4778 ms|
-|Maxpool|Pytorch 0.4||||
-||Flux||||
-|Meanpool|Pytorch 0.4||||
-||Flux||||
 
 ## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Layer|Framework|Forward Pass|Backward Pass|Total Time|
@@ -177,8 +87,4 @@
 |Dense|Pytorch 0.4||||
 ||Flux||||
 |BatchNorm|Pytorch 0.4||||
-||Flux||||
-|Maxpool|Pytorch 0.4||||
-||Flux||||
-|Meanpool|Pytorch 0.4||||
 ||Flux||||
