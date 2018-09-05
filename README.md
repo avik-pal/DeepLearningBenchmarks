@@ -8,11 +8,11 @@
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |VGG16|Pytorch 0.4|0.0245 s|0.0606 s|0.0852 s|0.0234 s|
-||Flux|0.0802 s|0.5375 s|0.6177 s||
+||Flux|0.0490 s|0.1251 s|0.1741 s|0.0501|
 |VGG16 BN|Pytorch 0.4|0.0271 s|0.0672 s|0.0943 s|0.0273 s|
 ||Flux|0.0924 s|0.5582 s|0.6506 s||
 |VGG19|Pytorch 0.4|0.0281 s|0.0741 s|0.1021 s|0.0280 s|
-||Flux|0.0925 s|0.5375 s|0.6300 s||
+||Flux|0.0925 s|0.1168 s|0.2093 s|0.0600|
 |VGG19 BN|Pytorch 0.4|0.0321 s|0.0812 s|0.1134 s|0.0325 s|
 ||Flux|0.0975 s|0.5903 s|0.6878 s||
 |Resnet18|Pytorch 0.4|0.0064 s|0.0125 s|0.0190 s|0.0050 s|
