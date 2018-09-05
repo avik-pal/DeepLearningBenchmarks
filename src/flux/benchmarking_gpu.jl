@@ -1,4 +1,5 @@
 using BenchmarkTools
+using CUDAnative
 
 function run_benchmarks(arr, batch_size)
     for m in arr

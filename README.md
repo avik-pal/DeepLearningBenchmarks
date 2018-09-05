@@ -24,6 +24,7 @@
 |Resnet101|Pytorch 0.4|0.0297 s|0.0379 s|0.0676 s|0.0298 s|
 ||Flux|0.0720 s|0.6926 s|0.7646 s|0.0708 s|
 |Resnet152|Pytorch 0.4|0.0431 s|0.05337 s|0.0965 s|0.0429 s|
+||Flux|||||
 
 ## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -61,13 +62,13 @@
 |Layer|Framework|Forward Pass|Backward Pass|Total Time|
 |:---:|:---:|:---:|:---:|:---:|
 |Conv3x3/1|Pytorch 0.4|0.2312 ms|0.5359 ms|0.7736 ms|
-||Flux|1.0112 ms|17.980 ms|18.992 ms|
+||Flux|0.405 ms|1.085 ms|1.490 ms|
 |Conv5x5/1|Pytorch 0.4|0.2667 ms|0.5345 ms|0.8299 ms|
-||Flux|1.0231 ms|18.049 ms|19.170 ms|
+||Flux|0.447 ms|1.210 ms|1.657 ms|
 |Conv3x3/2|Pytorch 0.4|0.1170 ms|0.2203 ms|0.3376 ms|
-||Flux|0.3097 ms|4.0903 ms|4.4000 ms|
+||Flux|0.145 ms|0.357 ms|0.502 ms|
 |Conv5x5/2|Pytorch 0.4|0.1233 ms|0.2162 ms|0.3407 ms|
-||Flux|0.3181 ms|4.1010 ms|4.4191 ms|
+||Flux|0.154 ms|0.392 ms|0.546 ms|
 |Dense|Pytorch 0.4|0.0887 ms|0.1523 ms|0.2411 ms|
 ||Flux|0.1179 ms|0.0875 ms|0.2054 ms|
 |BatchNorm|Pytorch 0.4|0.1096 ms|0.1999 ms|0.3095 ms|
@@ -88,3 +89,7 @@
 ||Flux||||
 |BatchNorm|Pytorch 0.4||||
 ||Flux||||
+
+# NOTE
+
+To reproduce the benchmarks checkout both `Flux` and `CuArrays` __master__.

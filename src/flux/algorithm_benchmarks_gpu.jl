@@ -1,4 +1,4 @@
-using Flux, CuArrays, BenchmarkTools
+using Flux, CuArrays, BenchmarkTools, CUDAnative
 
 function run_benchmarks()
     println("Forward Pass :")
@@ -31,15 +31,6 @@ run_benchmarks()
 
 layer = Conv((5,5), 3=>64, pad = (2, 2), stride = (2, 2)) |> gpu
 println("Benchmarks for Conv5x5/2")
-run_benchmarks()
-
-layer = x -> maxpool(x, (3, 3), stride = (2, 2), pad = (1, 1))
-grad = ones(112, 112, 3, 1) |> gpu
-println("Benchmarks for Maxpool")
-run_benchmarks()
-
-layer = x -> meanpool(x, (3, 3), stride = (2, 2), pad = (1, 1))
-println("Benchmarks for Meanpool")
 run_benchmarks()
 
 grad = ones(224, 224, 3, 1) |> gpu
