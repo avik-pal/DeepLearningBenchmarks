@@ -33,6 +33,15 @@ layer = Conv((5,5), 3=>64, pad = (2, 2), stride = (2, 2)) |> gpu
 println("Benchmarks for Conv5x5/2")
 run_benchmarks()
 
+layer = MaxPool((3, 3), stride = (2, 2), pad = (1, 1)) |> gpu
+grad = ones(112, 112, 3, 1) |> gpu
+println("Benchmarks for Maxpool")
+run_benchmarks()
+
+layer = MeanPool((3, 3), stride = (2, 2), pad = (1, 1)) |> gpu
+println("Benchmarks for Meanpool")
+run_benchmarks()
+
 grad = ones(224, 224, 3, 1) |> gpu
 layer = BatchNorm(3) |> gpu
 println("Benchmarks for BatchNorm")

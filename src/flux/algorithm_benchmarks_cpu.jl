@@ -33,12 +33,12 @@ layer = Conv((5,5), 3=>64, pad = (2, 2))
 println("Benchmarks for Conv5x5/2")
 run_benchmarks()
 
-layer = x -> maxpool(x, (3, 3), stride = (2, 2), pad = (1, 1))
+layer = MaxPool((3, 3), stride = (2, 2), pad = (1, 1))
 grad = ones(112, 112, 3, 1)
 println("Benchmarks for Maxpool")
 run_benchmarks()
 
-layer = x -> meanpool(x, (3, 3), stride = (2, 2), pad = (1, 1))
+layer = MeanPool((3, 3), stride = (2, 2), pad = (1, 1))
 println("Benchmarks for Meanpool")
 run_benchmarks()
 
