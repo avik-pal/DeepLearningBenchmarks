@@ -73,8 +73,8 @@
 ||Flux 0.6.8+|__0.0941 ms__|0.6515 ms|0.7456 ms|
 |Dense|Pytorch 0.4.1|0.0887 ms|__0.1523 ms__|__0.2411 ms__|
 ||Flux 0.6.8+|__0.0432 ms__|0.2044 ms|0.2476 ms|
-|BatchNorm|Pytorch 0.4.1|0.1096 ms|0.1999 ms|0.3095 ms|
-||Flux 0.6.8+|-|-|-|
+|BatchNorm|Pytorch 0.4.1|__0.1096 ms__|__0.1999 ms__|__0.3095 ms__|
+||Flux 0.6.8+|0.2211 ms|0.2849 ms|0.5060 ms|
 
 <!-- ## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Layer|Framework|Forward Pass|Backward Pass|Total Time|
