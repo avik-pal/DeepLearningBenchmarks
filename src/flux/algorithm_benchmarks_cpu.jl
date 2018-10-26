@@ -2,16 +2,19 @@ using Flux, BenchmarkTools
 
 function run_benchmarks()
     println("Forward Pass :")
-    @btime begin
-        $layer($x)
-        CUDAnative.synchronize()
+    # @btime $layer($x)
+    t = zeros(10)
+    for i in 1:10
+        t[i] = @elapsed layer(x)
     end
+    println(minimum(t))
 
     println("Total Time :")
-    @btime begin
-        Flux.back!($layer($x), $grad)
-        CUDAnative.synchronize()
+    # @btime Flux.back!($layer($x), $grad)
+    for i in 1:10
+        t[i] = @elapsed Flux.back!(layer(x), grad)
     end
+    println(minimum(t))
 end
 
 x = rand(224, 224, 3, 1)
@@ -31,15 +34,6 @@ run_benchmarks()
 
 layer = Conv((5,5), 3=>64, pad = (2, 2))
 println("Benchmarks for Conv5x5/2")
-run_benchmarks()
-
-layer = MaxPool((3, 3), stride = (2, 2), pad = (1, 1))
-grad = ones(112, 112, 3, 1)
-println("Benchmarks for Maxpool")
-run_benchmarks()
-
-layer = MeanPool((3, 3), stride = (2, 2), pad = (1, 1))
-println("Benchmarks for Meanpool")
 run_benchmarks()
 
 grad = ones(224, 224, 3, 1)

@@ -1,10 +1,11 @@
 # Popular Computer Vision Model Benchmarks
 
-## Input Dimensions
+## Model Input Descriptions
 1. Batch Size = 8, Image = 3 x 224 x 224 (IF NOTHING SPECIFIED / CPU USED)
 2. Batch Size = 4, Image = 3 x 224 x 224
     * Resnet 101
     * Resnet 152
+3. The NNPACK benchmarks are using `JULIA_NUM_THREADS=4`
 
 ## GPU USED --- Titan 1080Ti 12 GB
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
@@ -31,24 +32,33 @@
 ## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Model|Framework|Forward Pass|Backward Pass|Total Time|Inference|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|VGG16|Pytorch 0.4.1|__6.6024 s__|__9.4336 s__|__16.036 s__|__6.4216 s__|
+|VGG16|Pytorch 0.4.1|6.6024 s|__9.4336 s__|16.036 s|__6.4216 s__|
 ||Flux 0.6.8+|10.458 s|10.245 s|20.703 s|10.111 s|
+||Flux 0.6.8+ (NNPACK)|__5.4804 s__|10.000 s|__15.481 s__|-|
 |VGG16 BN|Pytorch 0.4.1|__7.0793 s__|__9.0536 s__|__16.132 s__|__6.7909 s__|
 ||Flux 0.6.8+|29.633 s|18.649 s|49.282 s|24.047 s|
-|VGG19|Pytorch 0.4.1|__8.3075 s__|__10.899 s__|__19.207 s__|__8.0593 s__|
+||Flux 0.6.8+ (NNPACK)|13.397 s|-|-|-|
+|VGG19|Pytorch 0.4.1|8.3075 s|__10.899 s__|19.207 s|__8.0593 s__|
 ||Flux 0.6.8+|12.226 s|12.457 s|24.683 s|12.029 s|
+||Flux 0.6.8+ (NNPACK)|__6.3199 s__|12.000 s|__18.313 s__|-|
 |VGG19 BN|Pytorch 0.4.1|__8.7794 s__|__12.739 s__|__21.519 s__|__8.4044 s__|
 ||Flux 0.6.8+|28.518 s|21.464 s|49.982 s|22.649 s|
-<!-- |Resnet18|Pytorch 0.4.1|||||
-||Flux 0.6.8+|||||
-|Resnet34|Pytorch 0.4.1|||||
-||Flux 0.6.8+|||||
-|Resnet50|Pytorch 0.4.1|||||
-||Flux 0.6.8+|||||
-|Resnet101|Pytorch 0.4.1|||||
-||Flux 0.6.8+|||||
-|Resnet152|Pytorch 0.4.1|||||
-||Flux 0.6.8+||||| -->
+||Flux 0.6.8+ (NNPACK)|13.526 s|-|-|-|
+|Resnet18|Pytorch 0.4.1|0.9410 s|1.3655 s|2.3534 s|0.9879 s|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Resnet34|Pytorch 0.4.1|1.8866 s|2.3746 s|4.3245 s|1.9499 s|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Resnet50|Pytorch 0.4.1|2.4674 s|3.1454 s|5.6218 s|2.4674 s|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Resnet101|Pytorch 0.4.1|4.2704 s|5.5692 s|9.8855 s|4.2704 s|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Resnet152|Pytorch 0.4.1|6.0808 s|8.0634 s|14.144 s|6.0808 s|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
 
 # Individual Layer Benchmarks
 
@@ -76,21 +86,27 @@
 |BatchNorm|Pytorch 0.4.1|__0.1096 ms__|__0.1999 ms__|__0.3095 ms__|
 ||Flux 0.6.8+|0.2211 ms|0.2849 ms|0.5060 ms|
 
-<!-- ## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
+## CPU USED --- Intel(R) Xeon(R) Silver 4114 CPU @ 2.20GHz
 |Layer|Framework|Forward Pass|Backward Pass|Total Time|
 |:---:|:---:|:---:|:---:|:---:|
-|Conv3x3/1|Pytorch 0.4.1||||
-||Flux 0.6.8+||||
-|Conv5x5/1|Pytorch 0.4.1||||
-||Flux 0.6.8+||||
-|Conv3x3/2|Pytorch 0.4.1||||
-||Flux 0.6.8+||||
-|Conv5x5/2|Pytorch 0.4.1||||
-||Flux 0.6.8+||||
-|Dense|Pytorch 0.4.1||||
-||Flux 0.6.8+||||
-|BatchNorm|Pytorch 0.4.1||||
-||Flux 0.6.8+|||| -->
+|Conv3x3/1|Pytorch 0.4.1|-|-|-|-|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Conv5x5/1|Pytorch 0.4.1|-|-|-|-|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Conv3x3/2|Pytorch 0.4.1|-|-|-|-|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Conv5x5/2|Pytorch 0.4.1|-|-|-|-|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|Dense|Pytorch 0.4.1|-|-|-|-|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
+|BatchNorm|Pytorch 0.4.1|-|-|-|-|
+||Flux 0.6.8+|-|-|-|-|
+||Flux 0.6.8+ (NNPACK)|-|-|-|-|
 
 # NOTE
 
