@@ -92,10 +92,10 @@ end
 
 if CuArrays.functional()
     paramspath = joinpath(dirname(@__FILE__), "params_gpu.json")
-    results_file = joinpath(dirname(@__FILE__), "results_gpu.json")
+    results_file = joinpath(dirname(@__FILE__), "results_gpu.bson")
 else
     paramspath = joinpath(dirname(@__FILE__), "params_cpu.json")
-    results_file = joinpath(dirname(@__FILE__), "results_cpu.json")
+    results_file = joinpath(dirname(@__FILE__), "results_cpu.bson")
 end
 
 if isfile(paramspath)
