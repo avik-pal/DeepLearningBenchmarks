@@ -1,4 +1,4 @@
-using Flux, CuArrays, Zygote, BenchmarkTools, BSON
+using Flux, CuArrays, Zygote, BenchmarkTools, BSON, Random
 
 const suite = BenchmarkGroup()
 
@@ -30,7 +30,7 @@ function add!(suite, layer, layer_name, input)
 end
 
 
-for batch_size in [1, 4, 16, 64, 256]
+for batch_size in [1, 16, 64]
     add!(
         suite,
         Dense(1024, 512),
